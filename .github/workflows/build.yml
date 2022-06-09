@@ -4,13 +4,15 @@ on:
     branches:
       - 'main'
 
+fail-fast: false
+
 jobs:
   build:
     strategy:
       matrix:
         target:
           - 'aarch64-linux-gnu'
-          - 'arach64-linux-musl'
+          - 'aarch64-linux-musl'
           - 'x86_64-linux-gnu'
           - 'x86_64-linux-musl'
           - 'arm64-macos-musl'
