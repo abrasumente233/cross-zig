@@ -4,11 +4,10 @@ on:
     branches:
       - 'main'
 
-fail-fast: false
-
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         target:
           - 'aarch64-linux-gnu'
