@@ -27,7 +27,7 @@ jobs:
         with:
           version: 0.9.0
       - name: Build with zig cc
-        run: zig cc main.c -target ${{ matrix.target }}
+        run: zig cc main.c -target ${{ matrix.target }} -o a.out
       - uses: actions/upload-artifact@v3
         with:
           name: ignore-${{ matrix.target }}
