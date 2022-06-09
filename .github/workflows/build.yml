@@ -12,9 +12,12 @@ jobs:
         target:
           - 'aarch64-linux-gnu'
           - 'aarch64-linux-musl'
+          - 'aarch64-macos-gnu'
           - 'x86_64-linux-gnu'
           - 'x86_64-linux-musl'
-          - 'arm64-macos-musl'
+          - 'x86_64-macos-gnu'
+          - 'x86_64-windows-gnu'
+          - 'arm-linux-gnueabi'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
