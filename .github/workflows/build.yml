@@ -6,6 +6,14 @@ on:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        target:
+          - 'aarch64-linux-gnu'
+          - 'arach64-linux-musl'
+          - 'x86_64-linux-gnu'
+          - 'x86_64-linux-musl'
+          - 'arm64-macos-musl'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout sources
@@ -15,8 +23,8 @@ jobs:
         with:
           version: 0.9.0
       - name: Build with zig cc
-        run: zig cc main.c
+        run: zig cc main.c --target${{ matrix.target }}
       - uses: actions/upload-artifact@v3
         with:
-          name: a.out
+          name: ignore-${{ matrix.target }}
           path: a.out
